@@ -4,9 +4,10 @@ import { ApplicationViews } from "./ApplicationViews"
 import { NavBar } from "./nav/NavBar"
 import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
-
+import { Wrapper } from "./Styles/Global"
 export const LevelUp = () => (
     <>
+			<Wrapper>
         <Route render={() => {
             if (localStorage.getItem("lu_token")) {
                 return <>
@@ -27,6 +28,6 @@ export const LevelUp = () => (
         <Route path="/register">
             <Register />
         </Route>
-
+			</Wrapper>
     </>
 )

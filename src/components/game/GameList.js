@@ -10,22 +10,27 @@ export const GameList = (props) => {
   }, []);
 
   return (
-    <article className="games">
-      {games.map((game) => {
-        return (
-          <section key={`game--${game.id}`} className="game">
-            <div className="game__name">
-              {game.name} by {game.maker}
+    <div className="component-wrapper">
+      <h2>Games</h2>
+      <article className="gameCard">
+        {games.map((game) => {
+          return (
+            <div className="games">
+              <section key={`game--${game.id}`} className="game">
+                <div className="game__name">
+                  {game.name} by {game.maker}
+                </div>
+                <div className="game__players">
+                  {game.number_of_players} players needed
+                </div>
+                <div className="game__skillLevel">
+                  Skill level = {game.skill_level}
+                </div>
+              </section>
             </div>
-            <div className="game__players">
-              {game.number_of_players} players needed
-            </div>
-            <div className="game__skillLevel">
-              Skill level is {game.skill_level}
-            </div>
-          </section>
-        );
-      })}
-    </article>
+          );
+        })}
+      </article>
+    </div>
   );
 };

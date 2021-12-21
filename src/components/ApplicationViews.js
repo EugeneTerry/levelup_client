@@ -7,7 +7,7 @@ export const ApplicationViews = () => {
   return <>
     <main style={{
           margin: "5rem 2rem",
-          backgroundColor: "lightgoldenrodyellow",
+          backgroundColor: "#dcf2e2",
           lineHeight: "1.75rem",
         }}>
         <GameProvider>
