@@ -38,14 +38,12 @@ export const Wrapper=styled.body`
     margin: 1em 1em;
     padding: .5em .5em;
     width: 300px;
-    display:flexbox;
     flex-wrap: wrap;
-    align-content:flex-start;
+    align-content:flex;
+    text-align: center;
     
   }
-  .gamesDivList {
-    margin: 2;
-    display: flex;
-    flex-wrap: wrap;
+  .game__name{
+    font-weight: 900;
   }
   `
