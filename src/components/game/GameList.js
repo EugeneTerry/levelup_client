@@ -18,7 +18,10 @@ export const GameList = (props) => {
             <div className="games">
               <section key={`game--${game.id}`} className="game">
                 <div className="game__name">
-                  {game.name} by {game.maker}
+                  {game.name}
+                </div>
+                <div className="game__maker">
+                  Manufactured by {game.maker}
                 </div>
                 <div className="game__players">
                   {game.number_of_players} players needed
