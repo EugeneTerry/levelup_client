@@ -7,27 +7,27 @@ import { Register } from "./auth/Register"
 import { Wrapper } from "./Styles/Global"
 export const LevelUp = () => (
     <>
-			<Wrapper>
-        <Route render={() => {
-            if (localStorage.getItem("lu_token")) {
-                return <>
-                    <Route>
-                        <NavBar />
-                        <ApplicationViews />
-                    </Route>
-                </>
-            } else {
-                return <Redirect to="/login" />
-            }
-        }} />
+		<Wrapper>
+            <Route render={() => {
+                if (localStorage.getItem("lu_token")) {
+                    return <>
+                        <Route>
+                            <NavBar />
+                            <ApplicationViews />
+                        </Route>
+                    </>
+                } else {
+                    return <Redirect to="/login" />
+                }
+            }} />
 
-        <Route path="/login">
-            <Login />
-        </Route>
+            <Route path="/login">
+                <Login />
+            </Route>
 
-        <Route path="/register">
-            <Register />
-        </Route>
-			</Wrapper>
+            <Route path="/register">
+                <Register />
+            </Route>
+		</Wrapper>
     </>
 )

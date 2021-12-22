@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper=styled.body`
-  background:#EFEEEB;
+  background:#dcf2e2;
 
   gen_button {
     background-color:#009A9C;
@@ -41,6 +41,7 @@ export const Wrapper=styled.body`
     flex-wrap: wrap;
     align-content:flex;
     text-align: center;
+    box-shadow: 10px 10px;
     
   }
   .game__name{

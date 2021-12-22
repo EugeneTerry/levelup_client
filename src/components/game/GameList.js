@@ -1,9 +1,11 @@
 import React, { useContext, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import styledComponents from "styled-components";
 import { GameContext } from "./GameProvider.js";
 
 export const GameList = (props) => {
   const { games, getGames } = useContext(GameContext);
+  const history = useHistory();
 
   useEffect(() => {
     getGames();
@@ -33,6 +35,10 @@ export const GameList = (props) => {
             </div>
           );
         })}
+        <button className="gen_button"
+          onClick={() => history.push("/games/new")}>
+          Register New Game
+        </button>
       </article>
     </div>
   );
