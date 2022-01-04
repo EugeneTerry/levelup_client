@@ -12,9 +12,9 @@ export const GameList = (props) => {
   }, []);
 
   return (
-    <div className="component-wrapper">
-      <h2>Games</h2>
-      <article className="gameCard">
+    <article className="games__wrapper">
+      <h1>Games</h1>
+      
         {games.map((game) => {
           return (
             <div className="games">
@@ -39,7 +39,7 @@ export const GameList = (props) => {
           onClick={() => history.push("/games/new")}>
           Register New Game
         </button>
-      </article>
-    </div>
+      
+    </article>
   );
 };

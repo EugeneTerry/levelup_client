@@ -16,7 +16,7 @@ export const GameForm = () => {
     number_of_players: 0,
     name: "",
     maker: "",
-    gametype_Id: 0,
+    gametype_id: 0,
     game_creator: 0,
   });
 
@@ -64,7 +64,7 @@ export const GameForm = () => {
 
   const changeGameTypeState = (event) => {
     const newGameState = { ...currentGame };
-    newGameState.gametype_Id = event.target.value;
+    newGameState.gametype_id = event.target.value;
     setCurrentGame(newGameState);
   };
   /* REFACTOR CHALLENGE END */
@@ -130,12 +130,12 @@ export const GameForm = () => {
       </fieldset>
       <fieldset>
         <div className="form-group">
-          <label htmlFor="gametype_Id">Select Game Type</label>
+          <label htmlFor="gametype_id">Select Game Type</label>
             <select
-            gametype_Id="gametype_Id"
-            id="gametype_Id"
+            gametype_id="gametype_id"
+            id="gametype_id"
             className="form-control"
-            value={currentGame.gametype_Id}
+            value={currentGame.gametype_id}
             onChange= {changeGameTypeState}
             >
               <option value="0"> Type </option>
@@ -165,7 +165,7 @@ export const GameForm = () => {
             name: currentGame.name,
             number_of_players: parseInt(currentGame.number_of_players),
             skill_level: parseInt(currentGame.skill_level),
-            gametype_Id: parseInt(currentGame.gametype_Id),
+            gametype_id: parseInt(currentGame.gametype_id),
           };
 
           // Send POST request to your API
