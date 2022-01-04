@@ -1,18 +1,20 @@
 import React, { useContext, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import styledComponents from "styled-components";
 import { GameContext } from "./GameProvider.js";
 
 export const GameList = (props) => {
   const { games, getGames } = useContext(GameContext);
+  const history = useHistory();
 
   useEffect(() => {
     getGames();
   }, []);
 
   return (
-    <div className="component-wrapper">
-      <h2>Games</h2>
-      <article className="gameCard">
+    <article className="games__wrapper">
+      <h1>Games</h1>
+      
         {games.map((game) => {
           return (
             <div className="games">
@@ -33,7 +35,11 @@ export const GameList = (props) => {
             </div>
           );
         })}
-      </article>
-    </div>
+        <button className="gen_button"
+          onClick={() => history.push("/games/new")}>
+          Register New Game
+        </button>
+      
+    </article>
   );
 };
