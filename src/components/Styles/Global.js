@@ -44,7 +44,14 @@ export const Wrapper=styled.body`
     text-align: center;
     box-shadow: 10px 10px;
     
+    
   }
+  .game__stack{
+    display:flex;
+    flex-wrap: wrap;
+   
+  }
+
   .game__name{
     font-weight: 900;
   }

@@ -15,6 +15,7 @@ export const EventList = (props) => {
       <header className="events__header">
         <h1>Level Up Game Events</h1>
       </header>
+      <div className="game__stack">
       {events.map((event) => {
         return (
           <div key={event.id}  className="games">
@@ -35,6 +36,7 @@ export const EventList = (props) => {
         </div>
         );
       })}
+      </div>
       <button className="gen_button"
           onClick={() => history.push("/events/new")}>
           Register New Event
