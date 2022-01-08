@@ -1,7 +1,9 @@
 import React, { useContext, useEffect } from "react";
 import { EventContext } from "./EventProvider.js";
+import { useHistory } from "react-router-dom";
 
 export const EventList = (props) => {
+  const history = useHistory();
   const { events, getEvents } = useContext(EventContext);
 
   useEffect(() => {
@@ -15,8 +17,8 @@ export const EventList = (props) => {
       </header>
       {events.map((event) => {
         return (
-          <div className="games">
-          <section key={event.id} className="registration">
+          <div key={event.id}  className="games">
+          <section className="registration">
             <div className="registration__game">{event.game.name}</div>
             <div className="game__name">{event.title}</div>
             <div>
@@ -33,6 +35,10 @@ export const EventList = (props) => {
         </div>
         );
       })}
+      <button className="gen_button"
+          onClick={() => history.push("/events/new")}>
+          Register New Event
+        </button>
     </article>
   );
 };
