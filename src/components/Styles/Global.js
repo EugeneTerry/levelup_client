@@ -35,9 +35,10 @@ export const Wrapper=styled.body`
 
   .games {
     border: 4px solid #009A9C;
+    background: white;
     margin: 1em 1em;
     padding: .5em .5em;
-    width: 300px;
+    width: 350px;
     flex-wrap: wrap;
     align-content:flex;
     text-align: center;
