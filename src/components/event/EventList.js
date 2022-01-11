@@ -22,8 +22,8 @@ export const EventList = (props) => {
           <section className="registration">
             <div className="registration__game">{event.game.name}</div>
             <div className="game__name">{event.title}</div>
-            <div>
-              {new Date(event.date).toLocaleDateString("en-US", {
+            <div> 
+              {new Date((event.date)).toUTCString("en-US", {
                 weekday: "long",
                 year: "numeric",
                 month: "long",

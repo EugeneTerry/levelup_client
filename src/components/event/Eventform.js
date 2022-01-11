@@ -118,7 +118,7 @@ export const EventForm = () => {
 
           const event = {
             title: currentEvent.title,
-            date: currentEvent.date,
+            date:currentEvent.date,
             time: currentEvent.time,
             game_id: parseInt(currentEvent.game_id),
           };
