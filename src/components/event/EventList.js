@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 
 export const EventList = (props) => {
   const history = useHistory();
-  const { events, getEvents } = useContext(EventContext);
+  const { events, getEvents, joinEvent } = useContext(EventContext);
 
   useEffect(() => {
     getEvents();
@@ -32,6 +32,9 @@ export const EventList = (props) => {
               <div>Time: {event.time}
               </div> 
             </div>
+            <button className="small__button" onClick={() => joinEvent(event.id)}>
+              Join
+            </button>
           </section>
         </div>
         );
