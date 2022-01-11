@@ -20,8 +20,8 @@ export const EventList = (props) => {
         return (
           <div key={event.id}  className="games">
           <section className="registration">
-            <div className="registration__game">{event.game.name}</div>
             <div className="game__name">{event.title}</div>
+            <div className="registration__game">Game:{event.game.name}</div>
             <div> 
               {new Date((event.date)).toUTCString("en-US", {
                 weekday: "long",

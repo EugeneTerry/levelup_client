@@ -34,7 +34,7 @@ export const Wrapper=styled.body`
     }
 
   .games {
-    border: 4px solid #009A9C;
+    border: 4px solid green;
     background: white;
     margin: 1em 1em;
     padding: .5em .5em;
@@ -53,6 +53,8 @@ export const Wrapper=styled.body`
   }
 
   .game__name{
-    font-weight: 900;
+    font-weight: bold;
+    color: green;
+    text-decoration: underline;
   }
   `
