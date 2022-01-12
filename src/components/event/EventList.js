@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { EventContext } from "./EventProvider.js";
 import { useHistory } from "react-router-dom";
 
-export const EventList = (props) => {
+export const EventList = () => {
   const history = useHistory();
   const { events, getEvents, joinEvent } = useContext(EventContext);
 
@@ -17,18 +17,22 @@ export const EventList = (props) => {
       </header>
       <div className="game__stack">
       {events.map((event) => {
+        // const attending = profile.events.some((evt) => evt.id === event.id);
         return (
           <div key={event.id}  className="games">
           <section className="registration">
             <div className="game__name">{event.title}</div>
             <div className="registration__game">Game:{event.game.name}</div>
-            <div> 
-              {new Date((event.date)).toUTCString("en-US", {
+            <div>
+              {/* <p>{new Date((event.date)).toDateString()}</p> */}
+              
+              <p>{}</p>
+              <p>{new Date((event.date)).toUTCString("en-US", {
                 weekday: "long",
                 year: "numeric",
                 month: "long",
                 day: "numeric",
-              })}
+              })}</p>
               <div>Time: {event.time}
               </div> 
             </div>

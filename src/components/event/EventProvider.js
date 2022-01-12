@@ -31,8 +31,7 @@ export const EventProvider = (props) => {
     return fetch(`http://localhost:8000/events/${eventId}/signup`, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json", 
-        Authorization: `Token ${localStorage.getItem("lu_token")}`,
+         Authorization: `Token ${localStorage.getItem("lu_token")}`,
       },
     }).then((response) => response.json())
       .then(getEvents);
