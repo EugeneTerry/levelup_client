@@ -57,4 +57,9 @@ export const Wrapper=styled.body`
     color: green;
     text-decoration: underline;
   }
+  
+  .small__button{
+    background: green;
+    color: white;
+  }
   `
