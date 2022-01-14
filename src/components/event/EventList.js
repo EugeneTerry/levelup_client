@@ -24,13 +24,21 @@ export const EventList = () => {
             <div className="game__name">{event.title}</div>
             <div className="registration__game">Game: {event.game.name}</div>
             <div>
-              <p> {new Date(event.date).toLocaleDateString("en-US", {
+
+            <p> {new Date(event.date).toUTCString("en-US", {
                 weekday: "long",
                 year: "numeric",
                 month: "long",
                 day: "numeric",
-              })}</p>
-              <div>Time: {(event.time).toLocaleString()}
+              }).split(' ', 4).join(' ')}</p>
+
+              {/* <p> {new Date(event.date).toLocaleDateString("en-US", {
+                weekday: "long",
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}</p> */}
+              <div>Time: {(event.time).toLocaleString().split(':', 2).join(':')}
               </div> 
             </div>
             <button className="small__button" onClick={() => joinEvent(event.id)}>
