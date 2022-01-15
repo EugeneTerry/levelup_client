@@ -19,26 +19,10 @@ export const EventForm = () => {
     getGames();
   }, []);
 
-  const changeEventTitleState = (e) => {
+  const changeEventState = (e) => {
+    const key = e.target.name;
     const newEventState = { ...currentEvent };
-    newEventState.title = e.target.value;
-    setCurrentEvent(newEventState);
-  };
-
-  const changeEventDateState = (e) => {
-    const newEventState = { ...currentEvent };
-    newEventState.date = e.target.value;
-    setCurrentEvent(newEventState);
-  };
-
-  const changeEventTimeState = (e) => {
-    const newEventState = { ...currentEvent };
-    newEventState.time = e.target.value;
-    setCurrentEvent(newEventState);
-  };
-  const changeEventGameState = (e) => {
-    const newEventState = { ...currentEvent };
-    newEventState.game_id = e.target.value;
+    newEventState[key] = e.target.value;
     setCurrentEvent(newEventState);
   };
 
@@ -55,7 +39,7 @@ export const EventForm = () => {
             autoFocus
             className="form-control"
             value={currentEvent.title}
-            onChange={changeEventTitleState}
+            onChange={changeEventState}
           />
         </div>
       </fieldset>
@@ -69,7 +53,7 @@ export const EventForm = () => {
             autoFocus
             className="form-control"
             value={currentEvent.date}
-            onChange={changeEventDateState}
+            onChange={changeEventState}
           />
         </div>
       </fieldset>
@@ -83,7 +67,7 @@ export const EventForm = () => {
             autoFocus
             className="form-control"
             value={currentEvent.time}
-            onChange={changeEventTimeState}
+            onChange={changeEventState}
           />
         </div>
       </fieldset>
@@ -92,10 +76,11 @@ export const EventForm = () => {
           <label htmlFor="game_id">Select Game:</label>
             <select
             game_id="game_id"
+            name="game_id"
             id="game_id"
             className="form-control"
             value={currentEvent.game_id}
-            onChange= {changeEventGameState}
+            onChange= {changeEventState}
             >
               <option value="0"> Game </option>
               {

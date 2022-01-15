@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { EventContext } from "./EventProvider.js";
 import { useHistory } from "react-router-dom";
+import moment from "moment";
 
 export const EventList = () => {
   const history = useHistory();
@@ -24,22 +25,9 @@ export const EventList = () => {
             <div className="game__name">{event.title}</div>
             <div className="registration__game">Game: {event.game.name}</div>
             <div>
-
-            <p> {new Date(event.date).toUTCString("en-US", {
-                weekday: "long",
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              }).split(' ', 4).join(' ')}</p>
-
-              {/* <p> {new Date(event.date).toLocaleDateString("en-US", {
-                weekday: "long",
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })}</p> */}
-              <div>Time: {(event.time).toLocaleString().split(':', 2).join(':')}
-              </div> 
+              <p>{moment.utc(event.date).format("dddd, MMMM DD YYYY")}</p>
+              <div>Time: {moment(event.time, "HH:mm:ss").format("h:mm a")}
+              </div>
             </div>
             <button className="small__button" onClick={() => joinEvent(event.id)}>
               Join
