@@ -5,7 +5,7 @@ import moment from "moment";
 
 export const EventList = () => {
   const history = useHistory();
-  const { events, getEvents, joinEvent } = useContext(EventContext);
+  const { events, getEvents, joinEvent, leaveEvent} = useContext(EventContext);
 
   useEffect(() => {
     getEvents();
@@ -28,18 +28,25 @@ export const EventList = () => {
               <p>{moment.utc(event.date).format("dddd, MMMM DD YYYY")}</p>
               <div>Time: {moment(event.time, "HH:mm:ss").format("h:mm a")}
               </div>
+            {event.joined ? (
+              <button className="small__button__delete" onClick={() => leaveEvent(event.id)}>
+                    Leave
+                  </button>
+            ) : (
+              <button className="small__button" onClick={() => joinEvent(event.id)}>
+                    Join
+                  </button>
+            )}
             </div>
-            <button className="small__button" onClick={() => joinEvent(event.id)}>
-              Join
-            </button>
           </section>
         </div>
         );
       })}
       </div>
-      <button className="gen_button"
-          onClick={() => history.push("/events/new")}>
-          Register New Event
+      
+        <button className="gen_button"
+            onClick={() => history.push("/events/new")}>
+            Register New Event
         </button>
     </article>
   );
