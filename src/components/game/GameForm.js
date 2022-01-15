@@ -38,37 +38,13 @@ export const GameForm = () => {
 
         One hint: [event.target.name]
     */
-  const changeGameNameState = (event) => {
+  const changeGameState = (event) => {
+    const key = event.target.name;
     const newGameState = { ...currentGame };
-    newGameState.name = event.target.value;
+    newGameState[key] = event.target.value;
     setCurrentGame(newGameState);
   };
-
-  const changeGameMakerState = (event) => {
-    const newGameState = { ...currentGame };
-    newGameState.maker = event.target.value;
-    setCurrentGame(newGameState);
-  };
-
-  const changeGamePlayersState = (event) => {
-    const newGameState = { ...currentGame };
-    newGameState.number_of_players = event.target.value;
-    setCurrentGame(newGameState);
-  };
-
-  const changeGameSkillLevelState = (event) => {
-    const newGameState = { ...currentGame };
-    newGameState.skill_level = event.target.value;
-    setCurrentGame(newGameState);
-  };
-
-  const changeGameTypeState = (event) => {
-    const newGameState = { ...currentGame };
-    newGameState.gametype_id = event.target.value;
-    setCurrentGame(newGameState);
-  };
-  /* REFACTOR CHALLENGE END */
-
+  
   return (
     <form className="gameForm">
       <h2 className="gameForm__title">Register New Game</h2>
@@ -82,7 +58,7 @@ export const GameForm = () => {
             autoFocus
             className="form-control"
             value={currentGame.name}
-            onChange={changeGameNameState}
+            onChange={changeGameState}
           />
         </div>
       </fieldset>
@@ -90,13 +66,14 @@ export const GameForm = () => {
         <div className="form-group">
           <label htmlFor="skill_level">Skill Level (1-10): </label>
           <input
+            name = "skill_level"
             type="number" min={0} max={10}
             skill_level="skill_level"
             required
             autoFocus
             className="form-control"
             value={currentGame.skill_level}
-            onChange={changeGameSkillLevelState}
+            onChange={changeGameState}
           />
         </div>
       </fieldset>
@@ -106,11 +83,12 @@ export const GameForm = () => {
           <input
             type="text"
             maker="maker"
+            name="maker"
             required
             autoFocus
             className="form-control"
             value={currentGame.maker}
-            onChange={changeGameMakerState}
+            onChange={changeGameState}
           />
         </div>
       </fieldset>
@@ -118,13 +96,14 @@ export const GameForm = () => {
         <div className="form-group">
           <label htmlFor="number_of_players">Number of Players: </label>
           <input
+            name ="number_of_players"
             type="number" min={0}
             number_of_players="number_of_players"
             required
             autoFocus
             className="form-control"
             value={currentGame.number_of_players}
-            onChange={changeGamePlayersState}
+            onChange={changeGameState}
           />
         </div>
       </fieldset>
@@ -134,9 +113,10 @@ export const GameForm = () => {
             <select
             gametype_id="gametype_id"
             id="gametype_id"
+            name = "gametype_id"
             className="form-control"
             value={currentGame.gametype_id}
-            onChange= {changeGameTypeState}
+            onChange= {changeGameState}
             >
               <option value="0"> Type </option>
               {
