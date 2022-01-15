@@ -62,4 +62,9 @@ export const Wrapper=styled.body`
     background: green;
     color: white;
   }
+
+  .small__button__delete{
+    background: red;
+    color: white;
+  }
   `
