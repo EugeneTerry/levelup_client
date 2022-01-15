@@ -12,6 +12,7 @@ export const EventForm = () => {
     title: "",
     date: "",
     time: "",
+    description: "",
     game_id: 0,
   });
 
@@ -39,6 +40,20 @@ export const EventForm = () => {
             autoFocus
             className="form-control"
             value={currentEvent.title}
+            onChange={changeEventState}
+          />
+        </div>
+      </fieldset>
+      <fieldset>
+        <div className="form-group">
+          <label htmlFor="title">Event Description: </label>
+          <input
+            type="text"
+            name="description"
+            required
+            autoFocus
+            className="form-control"
+            value={currentEvent.description}
             onChange={changeEventState}
           />
         </div>
@@ -103,6 +118,7 @@ export const EventForm = () => {
 
           const event = {
             title: currentEvent.title,
+            description: currentEvent.description,
             date:currentEvent.date,
             time: currentEvent.time,
             game_id: parseInt(currentEvent.game_id),
