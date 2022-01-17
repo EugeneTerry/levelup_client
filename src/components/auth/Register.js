@@ -1,5 +1,6 @@
-import React, { useRef } from "react"
+import React, { useRef, useContext } from "react"
 import { Link, useHistory } from "react-router-dom"
+import { GamerContext } from "../gamer/GamerProvider"
 import "./Auth.css"
 
 export const Register = () => {
@@ -11,6 +12,7 @@ export const Register = () => {
     const verifyPassword = useRef()
     const passwordDialog = useRef()
     const history = useHistory()
+    const getCurrentGamer = useContext(GamerContext)
 
     const handleRegister = (e) => {
         e.preventDefault()
@@ -36,6 +38,7 @@ export const Register = () => {
                 .then(res => {
                     if ("token" in res) {
                         localStorage.setItem("lu_token", res.token)
+                        getCurrentGamer()
                         history.push("/")
                     }
                 })
