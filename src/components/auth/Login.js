@@ -1,5 +1,6 @@
-import React, { useRef } from "react"
+import React, { useRef, useContext } from "react"
 import { Link, useHistory } from "react-router-dom"
+import { GamerContext } from "../gamer/GamerProvider"
 import "./Auth.css"
 
 
@@ -8,6 +9,7 @@ export const Login = () => {
     const password = useRef()
     const invalidDialog = useRef()
     const history = useHistory()
+    
 
     const handleLogin = (e) => {
         e.preventDefault()
