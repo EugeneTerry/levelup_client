@@ -43,8 +43,18 @@ export const Wrapper=styled.body`
     align-content:flex;
     text-align: center;
     box-shadow: 10px 10px;
-    
-    
+  }
+
+  .attending_events {
+    border: 4px solid green;
+    background: white;
+    margin: 1em 1em;
+    padding: .5em .5em;
+    width: 350px;
+    flex-wrap: wrap;
+    align-content:flex;
+    text-align: center;
+    box-shadow: 10px 10px;
   }
   .game__stack{
     display:flex;
