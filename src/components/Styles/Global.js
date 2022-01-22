@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Wrapper=styled.body`
+export const Wrapper=styled.div`
   background:#dcf2e2;
 
   gen_button {

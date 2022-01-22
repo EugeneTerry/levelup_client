@@ -25,9 +25,9 @@ export const GamerList = (props) => {
         <ul>Name: {currentGamer.user && currentGamer.user.first_name}{""} {currentGamer.user && currentGamer.user.last_name}</ul>
         <ul>Email: {currentGamer.user && currentGamer.user.email}</ul>
         
-      </div>
-      <div className="attending_header"><h3>Your Events</h3>
-        {currentGamer.attending.map((event) =>{
+      </div><h3>Your Events</h3>
+      <div className="game__stack">
+        {currentGamer.attending?.map((event) =>{
           return (
             <div key={event.id} className="attending_events">
             <section>

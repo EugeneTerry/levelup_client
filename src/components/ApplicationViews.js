@@ -10,7 +10,7 @@ import { GamerList } from "./gamer/GamerList.js";
 
 export const ApplicationViews = () => {
   return (
-    <>
+    
       <main
         style={{
           margin: "5rem 2rem",
@@ -41,6 +41,6 @@ export const ApplicationViews = () => {
           </EventProvider>
         </GameProvider>
       </main>
-    </>
+  
   );
 };

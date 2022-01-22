@@ -8,8 +8,7 @@ import { Wrapper } from "./Styles/Global";
 import { GamerProvider } from "./gamer/GamerProvider";
 
 export const LevelUp = () => (
-  <>
-	
+
 		<Wrapper>
 			<GamerProvider>
 				<Route
@@ -38,5 +37,5 @@ export const LevelUp = () => (
 			</GamerProvider>
 		</Wrapper>
     
-  </>
+  
 );
